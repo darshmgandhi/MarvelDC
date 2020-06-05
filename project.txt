@@ -1,0 +1,232 @@
+create database ipproject;
+ 
+use ipproject;
+
+create table accounts
+(acno int primary key,
+fname varchar(30),
+lname varchar(30),
+email varchar(30),
+mobile bigint(30),
+dob date,
+superhero varchar(30),
+password varchar(30),
+address varchar(1000));
+
+
+create table data
+(srno int primary key,
+itemno varchar(20),
+title varchar(80),
+plot varchar(1000),
+duration int,
+rating double(3,1),
+rel varchar(50),
+price int);
+
+insert into data values(1,'batmanc1',"Batman:Rebirth","No one has ever stopped the Caped Crusader. Not The Joker. Not Two-Face. Not even the entire Justice Lea
+gue. But how does Batman confront a new hero who wants to save the city from the Dark Knight?",null,9.0,'15 June 2006',3000);
+
+insert into data values(2,'batmanc2',"Batman:Hush","Batman saves a young boy who was kidnapped by Killer Croc who was hired by Poison Ivy. While chasing Catwom
+an, Batman is seriously injured as he falls from a building. He teams up with Catwoman and follows Poison Ivy to Metropolis and fights Superman who is under Poison Ivy
+'s control.",null,9.6,'26 February 2016',3500);
+
+insert into data values(3,'batmanc3',"Batman and Son","Born into affluence, Bruce Wayne was fundamentally changed the night his parents were murdered before hi
+s eyes. From that day on, Bruce trained his mind and body beyond peak human perfection to become Batman--a symbol of terror, striking at the hearts of criminals and vi
+llains across the globe.",null,9.3,'7 May 2016',3200);
+
+insert into data values(4,'batmanc4',"Batman:Lost","Trapped in the Dark Multiverse, batman must face his greatest fears!",null,9.8,'9 November 2017',4000);
+
+insert into data values(5,'batmanc5',"Arkham Knight","It's time to find out what happens between Arkham City and Arkham Knight!",null,9.4,'14 March 2016',3700);
+
+insert into data values(6,'supermanc1',"Superman:Rebirth","The Last Son of Krypton must decide whether to help his young son use his new and rapidly increasing
+abilities, or hide them from the world.",null,8.4,'30 November 2016',2900);
+
+insert into data values(7,'supermanc2',"Earth One","A new and modernized take on the origin of Superman.",null,8.6,'30 March 2016',3100);
+
+insert into data values(8,'supermanc3',"Superman:Unchained","When thirteen satellites fall from the sky in one day, the logical suspect is Lex Luthor-even thoug
+h he's still locked up in prison! But a stranger question remains: If Superman didn't stop the last satellite from falling, who did?",null,9.0,'6 April 2016',3500);
+
+ insert into data values(9,'supermanc4',"Superman vs Darkseid","Rocketed to Earth from the doomed planet Krypton, the baby Kal-El was found by a kindly couple an
+d raised as Clark Kent. Developing extraordinary powers thanks to Earth's yellow sun, Clark fights for truth and justice as Superman, the Man of Steel!",null,9.0,'13 N
+ovember 2015',4000);
+
+ insert into data values(10,'supermanc5',"A Nation Divided","When Atticus Kent joins the Union Army against the Conferacy, he wasn't too sure if he'd make it out
+ alive. However, when a Confederacy cannonball hits him square in the chest and he gets back up again, he's not sure what to think!",null,7.9,'3 December 1999',2400);
+
+insert into data values(11,'wonder womanc1',"Wonder Woman:Rebirth","Why has the Lasso of Truth stopped working for the Amazon Princess? Start down the rabbit ho
+le as dark secrets from Wonder Woman's past unravel her present!",null,7.7,'22 June 2016',2100);
+
+insert into data values(12,'wonder womanc2',"The Tasmanian Devil","Not since the twelve labors of Hercules has a Greek warrior faced as great a danger and as de
+structive a peril as the Tasmanian Devil!",null,6.9,'22 August 2017',3600);
+
+ insert into data values(13,'wonder womanc3',"The Hiketeia","An angry woman who has angered the fates places herself as a servant to Wonder Woman in exchange for
+ her protection.But, how much destruction will her protection cause?",null,8.6,'14 April 2002',3000);
+
+insert into data values(14,'wonder womanc4',"Steve Trevor","When Wonder Woman saved Steve Trevor from dying on the shores of Themiscyra, his life-and hers-chang
+ed forever!",null,6.4,'8 August 2017',2800);
+
+insert into data values(15,'wonder womanc5',"Wonder Woman:2006","Who Is Wonder Woman?This story pays homage to the character's history while placing her firmly
+in the present with an all-new supporting cast, a brand-new mission, and a renewed sense of wonder.",null,8.5,'12 August 2006',3700);
+
+insert into data values(16,'justicec1',"Justice League:Rebirth","A new day dawns for Earth's greatest heroes as they welcome three new members to the team, incl
+uding...Superman? Who is this strange visitor from a dead world-and can he be trusted? Batman and Wonder Woman aren't so sure.",null,9.2,'21 July 2016',4100);
+
+insert into data values(17,'justicec2',"Justice League 3001"," They've managed to become the World's Greatest Heroes of the 30th century, but with legions of fo
+es gunning for them, can they stay alive long enough to see the year 3002?",null,8.4,'5 August 2015',3600);
+
+insert into data values(18,'justicec3',"Trinity War","This comic sees the Justice League, Justice League of America, and Justice League Dark clash, in order to
+solve the mystery of Pandora's Box.",null,8.8,'5 March 2014',4800);
+
+insert into data values(19,'justicec4',"Justice League:2011"," In a universe where super heroes are strange and new, Batman has discovered a dark evil that requ
+ires him to unite the World Greatest Heroes!",null,8.1,'7 October 2011',3600);
+
+insert into data values(20,'justicec5',"Justice League Dark","The witch known as The Enchantress has gone mad, unleashing forces that not even the combined powe
+rs of Superman, Batman, Wonder Woman and Cyborg can stop. And if those heroes can't handle the job, who will stand against this mystical madness?",null,9.0,'12 Novembe
+r 2011',3900);
+
+insert into data values(21,'iron manc1',"Invincible Iron Man"," From the creators that brought you ULTIMATE SPIDER-MAN comes new armor, new supporting cast, new
+ villains and a new purpose that is going to tear itself across the entire Marvel Universe and beyond.",null,8.5,'17 December 2015',3200);
+
+insert into data values(22,'iron manc2',"Iron Protocols","Deep within a secret government base beneath the arctic tundra lies the 'Ark': a vault containing the
+genetic codes for all life on Earth. But there's a problem-a rogue Artificial Intelligence has decided that the best way to protect the samples is to eradicate every l
+iving creature!",null,7.7,'11 December 2009',2900);
+
+insert into data values(23,'iron manc3',"Iron Man:2013"," Iron Man must act fast.and Tony Stark must build faster! The lethal techno virus Extremis is out in th
+e wild and up for grabs to the highest bidder! It's up to Tony Stark to contain it and that means creating a new suit of armor.NOW!",null,8.2,'12 January 2013',3200);
+
+insert into data values(24,'iron manc4',"Legacy"," Iron Man must act fast.and Tony Stark must build faster! The lethal techno virus Extremis is out in the wild
+and up for grabs to the highest bidder! It's up to Tony Stark to contain it and that means creating a new suit of armor.NOW!",null,8.1,'3 September 2010',2900);
+
+insert into data values(25,'iron manc5',"Superior Iron Man","In Superior Iron Man, the capitalistic Tony Stark of old is back! How far would you go for beauty?
+Power? Immortality? Tony Stark will give it to you, for a terrible cost.",null,8.4,'15 January 2015',3300);
+
+insert into data values(26,'captain americac1',"Captain America:2013","Rick Rememder takes over the adventures of CAPTAIN AMERICA with John Romita Jr.",null,7.3
+,'5 January 2013',2800);
+
+insert into data values(27,'captain americac2',"Siege","During the battle at Asgard, the Sentry -- under command of Norman Osborn -- killed Ares. Now Phobos mus
+t avenge his fallen father, begging the question: will any survive his vengeance?",null,8.2,'10 June 2010',3000);
+
+insert into data values(28,'captain americac3',"Blood and Glory","Punisher and Captain America team up to investigate a complicated weapons and drug ring in the
+ small South American country of Medisuela, only to find the country's diabolical dictator may have connections frighteningly close to home in the USA.",null,6.9,'15 O
+ctober 1992',2400);
+
+insert into data values(29,'captain americac4',"Ultimate Captain America","Who is the Black Panther?What secrets from his past cross into Captain America's orig
+in? What deal did they make that will throw Cap's loyalty to the Ultimates into question?",null,8.9,'21 December 2008',3700);
+
+insert into data values(30,'captain americac5',"Patriot"," This is the story of a man who was a great Patriot, and his determination to be something more. His a
+ttempt to be not just a hero, but a symbol. His struggle to show he has what it takes to be Captain America!",null,8.4,'4 November 2010',3300);
+
+insert into data values(31,'spidermanc1',"Avenging Spiderman","After a battle with A.I.M. with the Avengers, Spider-Man gets Red Hulk to help him return to New
+York. When they arrive, they find an army of moloids attacking during a marathon.",null,8.2,'2 January 2002',3400);
+
+insert into data values(32,'spidermanc2',"Spiderman 2099","With a job at PARKER INDUSTRIES, a stable relationship, and uncertain of what impact his actions will
+ have on the future, has decided that it's time to hang up the webs and retire from being Spider-Man",null,9.1,'25 December 2015',4000);
+
+insert into data values(33,'spidermanc3',"Spiderman Noir","The year is 1933, and New York City is run by corrupt politicians, crooked cops, and suave gangland b
+osses like the Goblin. But when a fateful spider-bite gives the young rabble-rouser Peter Parker the power to fight back, will even that be enough?",null,8.1,'21 Febru
+ary 2009',3600);
+
+insert into data values(34,'spidermanc4',"Spiderman Unlimited","Love is never silent, Mr. Davis-- and it never dies. It lives in us, in our hearts... ...forever
+.",null,8.1,'5 March 2004',2300);
+
+insert into data values(35,'spidermanc5',"Cataclysm","MILES MORALES learned the meaning of having great responsibility and put his costume back on after mournin
+g the tragic death of his mother. Now he stands to lose his entire world as a cosmic threat descends on earth.",null,9.1,'18 January 2014',3700);
+
+insert into data values(36,'avengersc1',"Infinity Gauntlet","For Thanos, the Infinity Gauntlet was the ultimate prize to be coveted above all else. With it came
+ omnipotence. Now it's up to Earth's super heroes to make a desperate attempt to thwart this mad god's insane plunge into galactic self-destruction.",null,9.5,'7 July
+1991',4300);
+
+insert into data values(37,'avengersc2',"Infinity War","Thanos finds the source of the power and marvels at it. He is soon met by the Magus. But, Thanos has cha
+nged.",null,9.6,'8 June 1992',4400);
+
+insert into data values(38,'avengersc3',"Avengers:2013","It's a new beginning with familiar faces for the Avengers. But will they be prepared for Hickman, Opena
+ and a new threat?",null,8.2,'17 February 2013',3200);
+
+insert into data values(39,'avengersc4',"Avengers Alliance","War has been declared on Earth by the Black Order...and the Avengers Alliance is the planet's only
+hope for survival!",null,8.6,'3 March 2016',3900);
+
+insert into data values(40,'avengersc5',"Finale","In the wreckage of Avengers Mansion, Earth's Mightiest Heroes meet for the very last time! It's the end of an
+era!",null,9.2,'6 January 2005',4000);
+
+insert into data values(41,'crossc1',"DC VS Marvel","Two universes have to fight to save their realms. The Biggest Stars from DC and Marvel have to fight each ot
+her. If one side loses, their Universe will be destroyed!!",null,9.6,'31 May 1996',5000);
+
+insert into data values(42,'crossc2',"All Access","The Marvel and the DC Universe had merged into an Amalgam of both Universes. A man called Access alone had th
+e key to separate them and to keep the two universes separate.",null,9.1,'12 December 1996',3900);
+
+insert into data values(43,'crossc3',"Batman/Spiderman","Spider-man is a wise-cracking but compassionate man who has an overwhelming sense of responsibility. Ba
+tman is a dark, menacing figure with no super-powers.",null,8.5,'18 October 1997',3300);
+
+insert into data values(44,'crossc4',"JLA/Avengers","What cataclysmic threat could endanger two universes - and dwarf the combined power of both Earth's Mightie
+st Heroes and the World's Greatest Super Heroes?",null,9.0,'23 September 2003',3600);
+
+insert into data values(45,'crossc5',"Superman VS Spiderman","The Battle of the Century. This is an issue you can't miss! Superman and Spider-Man have met for t
+he first time! Lex Luthor teamed up with Doctor Octopus and Only the two most powerful and popular heroes will have to save the city at all cost!",null,8.4,'2 May 1976
+',3500);
+
+insert into data values(46,'iron manm1',"Iron Man","After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit
+ of armor to fight evil.",126,7.9,'2 May 2008',3400);
+
+insert into data values(47,'iron manm2',"Iron Man 2","With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining heal
+th and a vengeful mad man with ties to his father's legacy.",124,7.0,'30 April 2010',3600);
+
+insert into data values(48,'iron manm3',"Iron Man 3","When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey
+of rebuilding and retribution.",130,7.2,'25 April 2013',2800);
+
+insert into data values(49,'captain americam1',"The First Avenger","Steve Rogers, a rejected military soldier transforms into Captain America after taking a dose of a 'Super-Soldier serum'. But being Captain America comes at a price as he attempts to take down a war monger and a terrorist organization.",124,6.9,'29 July 2011',3100);
+
+insert into data values(50,'captain americam2',"The Winter Soldier","As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fello
+w Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat from history: an assassin known as the Winter Soldier.",136,7.8,'26 March 2014',3700);
+
+insert into data values(51,'captain americam3',"Civil War","Political interference in the Avengers' activities causes a rift between former allies Captain Ameri
+ca and Iron Man.",147,7.9,'29 April 2016',4400);
+
+insert into data values(52,'spidermanm1',"Spider-Man","When bitten by a genetically modified spider, a nerdy, shy, and awkward high school student gains spider-
+like abilities that he eventually must use to fight evil as a superhero after tragedy befalls his family.",121,7.3,'14 June 2002',3100);
+
+insert into data values(53,'spidermanm2',"Spider-Man 2","Peter Parker is beset with troubles in his failing personal life as he battles a brilliant scientist na
+med Doctor Otto Octavius.",127,7.3,'16 July 2004',3200);
+
+insert into data values(54,'spidermanm3',"Spider-Man 3","A strange black entity from another world bonds with Peter Parker and causes inner turmoil as he conten
+ds with new villains, temptations, and revenge.",139,6.2,'4 May 2007',3350);
+
+insert into data values(55,'spidermanm4',"The Amazing Spider-Man","After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like
+powers and ventures out to solve the mystery of his parent's mysterious death.",136,7.0,'136',3500);
+
+insert into data values(56,'spidermanm5',"Homecoming","Peter Parker balances his life as an ordinary high school student in Queens with his superhero alter-ego
+Spider-Man, and finds himself on the trail of a new menace prowling the skies of New York City.",133,7.6,'5 July 2017',4500);
+
+insert into data values(57,'avengersm1',"Avengers Assemble","Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop
+the mischievous Loki and his alien army from enslaving humanity.",143,8.1,'26 April 2012',4000);
+
+insert into data values(58,'avengersm2',"Age of Ultron","When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things
+ go horribly wrong and it's up to Earth's mightiest heroes to stop the villainous Ultron from enacting his terrible plan.",141,7.4,'23 April 2015',4300);
+
+insert into data values(59,'avengersm3',"Infinity War","The Avengers and their allies must be willing to sacrifice all in an attempt to defeat the powerful Than
+os before his blitz of devastation and ruin puts an end to the universe.",144,8.4,'27 April 2018',5000);
+
+insert into data values(60,'batmanm1',"Batman Begins","After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corrupt
+ion that Scarecrow and the League of Shadows have cast upon it.",140,8.3,'16 June 2005',4000);
+
+insert into data values(61,'batmanm2',"The Dark Knight","When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the p
+eople of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",152,9.0,'24 July 2008',4300);
+
+insert into data values(62,'batmanm3',"The Dark Knight Rises","Eight years after the Joker's reign of anarchy, the Dark Knight, with the help of the enigmatic C
+atwoman, is forced from his exile to save Gotham City, now on the edge of total annihilation, from the brutal guerrilla terrorist Bane.",164,8.4,'20 July 2012',4600);
+
+insert into data values(63,'supermanm1',"Man of Steel","Clark Kent, one of the last of an extinguished race disguised as an unremarkable human, is forced to rev
+eal his identity when Earth is invaded by an army of survivors who threaten to bring the planet to the brink of destruction.",143,7.1,'14 June 2013',3500);
+
+insert into data values(64,'supermanm2',"Superman Returns","Superman reappears after a long absence, but is challenged by an old foe who uses Kryptonian technol
+ogy for world domination.",154,6.1,'14 July 2006',2800);
+
+insert into data values(65,'wonder womanm1',"Wonder Woman","When a pilot crashes and tells of conflict in the outside world, Diana, an Amazonian warrior in trai
+ning, leaves home to fight a war, discovering her full powers and true destiny.",141,7.6,'1 June 2017',3400);
+
+insert into data values(66,'justicem1',"Batman V Superman:Dawn of Justice","Fearing that the actions of Superman are left unchecked, Batman takes on the Man of
+Steel, while the world wrestles with what kind of a hero it really needs.",151,6.6,'25 March 2016',3100);
+
+insert into data values(67,'justicem2',"Justice League","Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists t
+he help of his newfound ally, Diana Prince, to face an even greater enemy.",120,7.2,'17 November 2017',3700);
+

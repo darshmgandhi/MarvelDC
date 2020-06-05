@@ -1,0 +1,1139 @@
+;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.sql.*;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Manish
+ */
+public class Homepage extends javax.swing.JFrame {
+
+    /**
+     * Creates new form Homepage
+     */
+    public Homepage(String email) {
+        initComponents();
+        this.setLocationRelativeTo(null);
+scrollPane.getVerticalScrollBar().setPreferredSize (new Dimension(0,0));
+scrollPane.getHorizontalScrollBar().setPreferredSize (new Dimension(0,0));
+scrollPane.getVerticalScrollBar().setMinimumSize(new Dimension(0, 0));
+scrollPane.getVerticalScrollBar().setMinimumSize(new Dimension(0, 0));
+scrollPane.getVerticalScrollBar().setMaximumSize(new Dimension(0, 0));
+scrollPane.getVerticalScrollBar().setMaximumSize(new Dimension(0, 0));
+scrollPane1.getVerticalScrollBar().setPreferredSize (new Dimension(0,0));
+scrollPane1.getHorizontalScrollBar().setPreferredSize (new Dimension(0,0));
+scrollPane1.getVerticalScrollBar().setMinimumSize(new Dimension(0, 0));
+scrollPane1.getVerticalScrollBar().setMinimumSize(new Dimension(0, 0));
+scrollPane1.getVerticalScrollBar().setMaximumSize(new Dimension(0, 0));
+scrollPane1.getVerticalScrollBar().setMaximumSize(new Dimension(0, 0));
+jLabel60.setVisible(false);
+jLabel61.setVisible(false);
+jLabel62.setVisible(false);
+jLabel63.setVisible(false);
+  email1=email;
+      try
+{Class.forName("com.mysql.jdbc.Driver");
+ Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ipproject", "root", "");
+ Statement st=conn.createStatement();
+ String str1="Select fname,lname,superhero from accounts where email='"+email1+"';";
+ResultSet rs=st.executeQuery(str1);
+if(rs.next())
+{firstid=rs.getString("fname");
+lastid=rs.getString("lname");
+hero=rs.getString("superhero");
+//System.out.print(hero);
+ImageIcon a = new ImageIcon(getClass().getResource("photos/"+hero+"icon.png"));
+jLabel55.setIcon(a);
+    id.setText(" "+firstid+" "+lastid);}
+}
+catch(Exception e)
+{JOptionPane.showMessageDialog(null, e.getMessage());}
+     ImageIcon b = new ImageIcon(getClass().getResource("photos/"+hero+".png"));
+rec.setIcon(b);
+    ImageIcon c = new ImageIcon(getClass().getResource("photos/"+hero+"h.png"));
+jLabel28.setIcon(c);
+  ImageIcon d = new ImageIcon(getClass().getResource("photos/"+hero+"c1i.png"));
+jLabel45.setIcon(d);
+     ImageIcon e = new ImageIcon(getClass().getResource("photos/"+hero+"c2i.png"));
+jLabel44.setIcon(e);
+     ImageIcon f = new ImageIcon(getClass().getResource("photos/"+hero+"c3i.png"));
+jLabel43.setIcon(f);
+     ImageIcon g = new ImageIcon(getClass().getResource("photos/"+hero+"c4i.png"));
+jLabel36.setIcon(g);
+     ImageIcon h = new ImageIcon(getClass().getResource("photos/"+hero+"c5i.png"));
+jLabel34.setIcon(h);
+ImageIcon i = new ImageIcon(getClass().getResource("photos/"+hero+"m1i.png"));
+jLabel31.setIcon(i);
+if(!hero.equalsIgnoreCase("wonder woman"))
+{ImageIcon j = new ImageIcon(getClass().getResource("photos/"+hero+"m2i.png"));
+jLabel30.setIcon(j);
+if(!hero.equalsIgnoreCase("superman"))
+{ImageIcon k = new ImageIcon(getClass().getResource("photos/"+hero+"m3i.png"));
+jLabel32.setIcon(k);
+if(hero.equalsIgnoreCase("spiderman"))
+{ImageIcon l = new ImageIcon(getClass().getResource("photos/"+hero+"m4i.png"));
+jLabel40.setIcon(l);
+ImageIcon m = new ImageIcon(getClass().getResource("photos/"+hero+"m5i.png"));
+jLabel38.setIcon(m);}}}
+    recommend(hero+"c1");
+    jLabel50.setText(title);
+    recommend(hero+"c2");
+    jLabel51.setText(title);
+    recommend(hero+"c3");
+    jLabel52.setText(title);
+    recommend(hero+"c4");
+    jLabel37.setText(title);
+    recommend(hero+"c5");
+    jLabel35.setText(title);
+    recommend(hero+"m1");
+    jLabel47.setText(title);
+    if(!hero.equalsIgnoreCase("wonder woman"))
+   {recommend(hero+"m2");
+    jLabel33.setText(title);
+    if(!hero.equalsIgnoreCase("superman"))
+    {recommend(hero+"m3");
+    jLabel46.setText(title);
+    if(hero.equalsIgnoreCase("spiderman"))
+    {recommend(hero+"m4");
+    jLabel41.setText(title);
+    recommend(hero+"m5");
+    jLabel39.setText(title);}}}}
+     
+    public static String recommend(String item)
+    {try
+{Class.forName("com.mysql.jdbc.Driver");
+ Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/ipproject", "root", "");
+ Statement st=conn.createStatement();
+ String str1="Select title from data where itemno='"+item+"';";
+ResultSet rs=st.executeQuery(str1);
+if(rs.next()) 
+{  title=rs.getString("title");}
+}
+    catch (Exception ex) {
+           JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+   return title; }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        exit3 = new javax.swing.JLabel();
+        mini3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        rec1 = new javax.swing.JLabel();
+        rec = new javax.swing.JLabel();
+        scrollPane = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        scrollPane1 = new javax.swing.JScrollPane();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel55 = new javax.swing.JLabel();
+        id = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jLabel64 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(930, 510));
+        setUndecorated(true);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+        getContentPane().setLayout(null);
+
+        exit3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        exit3.setForeground(new java.awt.Color(154, 15, 187));
+        exit3.setText("X");
+        exit3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exit3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                exit3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                exit3MouseExited(evt);
+            }
+        });
+        getContentPane().add(exit3);
+        exit3.setBounds(915, 6, 10, 17);
+
+        mini3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        mini3.setForeground(new java.awt.Color(154, 15, 187));
+        mini3.setText("_");
+        mini3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mini3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                mini3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                mini3MouseExited(evt);
+            }
+        });
+        getContentPane().add(mini3);
+        mini3.setBounds(895, 6, 10, 17);
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setMinimumSize(new java.awt.Dimension(930, 510));
+        jPanel2.setPreferredSize(new java.awt.Dimension(930, 480));
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanel2MouseEntered(evt);
+            }
+        });
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        rec1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/crossh.png"))); // NOI18N
+        rec1.setText("jLabel55");
+        rec1.setOpaque(true);
+        rec1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                rec1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rec1MouseExited(evt);
+            }
+        });
+        jPanel2.add(rec1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 630, 210));
+
+        rec.setText("jLabel55");
+        rec.setOpaque(true);
+        rec.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                recMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                recMouseExited(evt);
+            }
+        });
+        jPanel2.add(rec, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 630, 210));
+
+        scrollPane.setBorder(null);
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setMinimumSize(new java.awt.Dimension(630, 691));
+        jPanel1.setPreferredSize(new java.awt.Dimension(630, 451));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cross.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 210));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/crossc2i.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 90, 130));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/crossc1i.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 90, 130));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/crossc3i.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 90, 130));
+
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("All Access");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 400, 90, 20));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/crossc5i.png"))); // NOI18N
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 90, 130));
+
+        jLabel24.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel24.setText("Superman VS Spiderman");
+        jLabel24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel24MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 130, 20));
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/crossc4i.png"))); // NOI18N
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 90, 130));
+
+        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("JLA/Avengers");
+        jLabel22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel22MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 400, 90, 20));
+
+        jLabel9.setFont(new java.awt.Font("Lao UI", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("COMICS");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 130, 40));
+
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel16.setText("Batman and Spiderman");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 130, 20));
+
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("DC VS Marvel");
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 90, 20));
+
+        jLabel18.setText("      Iron Man 2");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 90, 20));
+
+        jLabel19.setText("      Iron Man 2");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 90, 20));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iron-Man-3-poster.jpg"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 89, 130));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iron-Man-3-poster.jpg"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 90, 130));
+
+        scrollPane.setViewportView(jPanel1);
+
+        jPanel2.add(scrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, 210));
+
+        scrollPane1.setBorder(null);
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setMinimumSize(new java.awt.Dimension(630, 691));
+        jPanel3.setPreferredSize(new java.awt.Dimension(630, 691));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel28.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marvel-logo-1280jpg-8851ea_1280w.jpg"))); // NOI18N
+        jPanel3.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 210));
+
+        jLabel29.setFont(new java.awt.Font("Lao UI", 1, 18)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel29.setText("COMICS");
+        jPanel3.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 180, 40));
+
+        jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel30MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 90, 130));
+
+        jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel31MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 90, 130));
+
+        jLabel32.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel32MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 90, 130));
+
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel33.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel33MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 130, 20));
+
+        jLabel34.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel34MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 520, 90, 130));
+
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel35MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(489, 660, 130, 20));
+
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator2.setOpaque(true);
+        jPanel3.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 550, 1));
+
+        jLabel36.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel36MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, 90, 130));
+
+        jLabel37.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel37.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel37MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(369, 660, 130, 20));
+
+        jLabel38.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel38MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 90, 130));
+
+        jLabel39.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel39.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel39MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 400, 130, 20));
+
+        jLabel40.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel40MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 90, 130));
+
+        jLabel41.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel41.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel41MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 400, 130, 20));
+
+        jLabel42.setFont(new java.awt.Font("Lao UI", 1, 18)); // NOI18N
+        jLabel42.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel42.setText("MOVIES");
+        jPanel3.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 130, 40));
+
+        jLabel43.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel43MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 520, 90, 130));
+
+        jLabel44.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel44MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, 90, 130));
+
+        jLabel45.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel45MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 520, 90, 130));
+
+        jLabel46.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel46.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel46MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 130, 20));
+
+        jLabel47.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel47.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel47MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 130, 20));
+
+        jLabel48.setText("      Iron Man 2");
+        jPanel3.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 90, 20));
+
+        jLabel49.setText("      Iron Man 2");
+        jPanel3.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 350, 90, 20));
+
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel50MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 660, 130, 20));
+
+        jLabel51.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel51.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel51MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 660, 130, 20));
+
+        jLabel52.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel52.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel52MouseClicked(evt);
+            }
+        });
+        jPanel3.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(249, 660, 130, 20));
+
+        scrollPane1.setViewportView(jPanel3);
+
+        jPanel2.add(scrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, -1, 210));
+
+        jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator3.setOpaque(true);
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 180, 1, 300));
+
+        jLabel55.setText("jLabel55");
+        jLabel55.setOpaque(true);
+        jPanel2.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 180));
+
+        id.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        id.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 240, 50));
+
+        jSeparator5.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator5.setOpaque(true);
+        jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(239, 190, 1, 30));
+
+        jLabel63.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dc.png"))); // NOI18N
+        jLabel63.setText("jLabel60");
+        jLabel63.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel63MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel63MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel63MouseExited(evt);
+            }
+        });
+        jPanel2.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 60, 50));
+
+        jLabel62.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marv.png"))); // NOI18N
+        jLabel62.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel62MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel62MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel62MouseExited(evt);
+            }
+        });
+        jPanel2.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 110, 50));
+
+        jLabel61.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dc.png"))); // NOI18N
+        jLabel61.setText("jLabel60");
+        jLabel61.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel61MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel61MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel61MouseExited(evt);
+            }
+        });
+        jPanel2.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 60, 50));
+
+        jLabel60.setIcon(new javax.swing.ImageIcon(getClass().getResource("/marv.png"))); // NOI18N
+        jLabel60.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel60MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel60MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel60MouseExited(evt);
+            }
+        });
+        jPanel2.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 110, 50));
+
+        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com.png"))); // NOI18N
+        jLabel57.setText("jLabel57");
+        jLabel57.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel57MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel57MouseExited(evt);
+            }
+        });
+        jPanel2.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 405, 200, 60));
+
+        jLabel59.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Carth.png"))); // NOI18N
+        jLabel59.setText("jLabel57");
+        jLabel59.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel59MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel59MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel59MouseExited(evt);
+            }
+        });
+        jPanel2.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 245, 200, 60));
+
+        jLabel58.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mov.png"))); // NOI18N
+        jLabel58.setText("jLabel57");
+        jLabel58.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel58MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel58MouseExited(evt);
+            }
+        });
+        jPanel2.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 325, 200, 60));
+
+        jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator6.setOpaque(true);
+        jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 690, 1));
+
+        jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator7.setOpaque(true);
+        jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 231, 200, 1));
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(0, 30, 930, 480);
+
+        jLabel64.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel64.setText("jLabel64");
+        jLabel64.setOpaque(true);
+        getContentPane().add(jLabel64);
+        jLabel64.setBounds(0, 0, 930, 30);
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+public String email1,firstid,lastid,hero;
+public static String title;
+    private void jPanel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseEntered
+  ImageIcon j = new ImageIcon(getClass().getResource("com.png"));
+jLabel57.setIcon(j);
+        ImageIcon i = new ImageIcon(getClass().getResource("mov.png"));
+jLabel58.setIcon(i);
+        rec.setVisible(true);    
+rec1.setVisible(true);
+jLabel63.setVisible(false);
+jLabel60.setVisible(false);
+jLabel61.setVisible(false);
+jLabel62.setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_jPanel2MouseEntered
+
+    private void rec1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rec1MouseEntered
+rec.setVisible(true);
+rec1.setVisible(false);// TODO add your handling code here:
+    }//GEN-LAST:event_rec1MouseEntered
+
+    private void rec1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rec1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rec1MouseExited
+
+    private void jLabel57MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel57MouseEntered
+ImageIcon i = new ImageIcon(getClass().getResource("ho.png"));
+jLabel57.setIcon(i);
+jLabel60.setVisible(true);
+jLabel61.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel57MouseEntered
+
+    private void jLabel57MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel57MouseExited
+       // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel57MouseExited
+
+    private void jLabel58MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel58MouseEntered
+ImageIcon i = new ImageIcon(getClass().getResource("ho.png"));
+jLabel58.setIcon(i);
+jLabel63.setVisible(true);
+jLabel62.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel58MouseEntered
+
+    private void jLabel58MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel58MouseExited
+         // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel58MouseExited
+
+    private void jLabel59MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel59MouseEntered
+ImageIcon i = new ImageIcon(getClass().getResource("Carth1.png"));
+jLabel59.setIcon(i);       // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel59MouseEntered
+
+    private void jLabel59MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel59MouseExited
+ImageIcon i = new ImageIcon(getClass().getResource("Carth.png"));
+jLabel59.setIcon(i);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel59MouseExited
+
+    private void jLabel62MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel62MouseEntered
+ImageIcon i = new ImageIcon(getClass().getResource("marv1.png"));
+jLabel62.setIcon(i);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel62MouseEntered
+
+    private void jLabel62MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel62MouseExited
+ImageIcon i = new ImageIcon(getClass().getResource("marv.png"));
+jLabel62.setIcon(i);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel62MouseExited
+
+    private void jLabel60MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel60MouseEntered
+ImageIcon i = new ImageIcon(getClass().getResource("marv1.png"));
+jLabel60.setIcon(i);         // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel60MouseEntered
+
+    private void jLabel60MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel60MouseExited
+ImageIcon i = new ImageIcon(getClass().getResource("marv.png"));
+jLabel60.setIcon(i);         // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel60MouseExited
+
+    private void jLabel63MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel63MouseEntered
+ImageIcon i = new ImageIcon(getClass().getResource("dc1.png"));
+jLabel63.setIcon(i);         // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel63MouseEntered
+
+    private void jLabel63MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel63MouseExited
+ImageIcon i = new ImageIcon(getClass().getResource("dc.png"));
+jLabel63.setIcon(i);         // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel63MouseExited
+
+    private void jLabel61MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseEntered
+ImageIcon i = new ImageIcon(getClass().getResource("dc1.png"));
+jLabel61.setIcon(i);         // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel61MouseEntered
+
+    private void jLabel61MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseExited
+ImageIcon i = new ImageIcon(getClass().getResource("dc.png"));
+jLabel61.setIcon(i);         // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel61MouseExited
+
+    private void exit3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exit3MouseClicked
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_exit3MouseClicked
+
+    private void exit3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exit3MouseEntered
+        exit3.setForeground(new Color(199,2,2));        // TODO add your handling code here:
+    }//GEN-LAST:event_exit3MouseEntered
+
+    private void exit3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exit3MouseExited
+        exit3.setForeground(new Color(154,15,187));        // TODO add your handling code here:
+    }//GEN-LAST:event_exit3MouseExited
+
+    private void mini3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mini3MouseClicked
+        this.setState(SignUp.ICONIFIED);        // TODO add your handling code here:
+    }//GEN-LAST:event_mini3MouseClicked
+
+    private void mini3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mini3MouseEntered
+        mini3.setForeground(new Color(25,20,209));          // TODO add your handling code here:
+    }//GEN-LAST:event_mini3MouseEntered
+
+    private void mini3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mini3MouseExited
+        mini3.setForeground(new Color(154,15,187));        // TODO add your handling code here:
+    }//GEN-LAST:event_mini3MouseExited
+
+    private void jLabel60MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel60MouseClicked
+MarvelComics m=new MarvelComics(email1);
+m.setVisible(true);
+this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jLabel60MouseClicked
+
+    private void jLabel61MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel61MouseClicked
+DCComics m=new DCComics(email1);
+m.setVisible(true);
+this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel61MouseClicked
+
+    private void jLabel62MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel62MouseClicked
+MarvelMovies m=new MarvelMovies(email1);
+m.setVisible(true);
+this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel62MouseClicked
+
+    private void jLabel63MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel63MouseClicked
+DCMovies m=new DCMovies(email1);
+m.setVisible(true);
+this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel63MouseClicked
+
+    private void jLabel59MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel59MouseClicked
+Cart h=new Cart(email1,firstid);
+this.dispose();
+h.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel59MouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+  // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowOpened
+
+    private void recMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recMouseExited
+
+    private void recMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recMouseEntered
+        rec.setVisible(false);
+        rec1.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_recMouseEntered
+
+    private void jLabel45MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel45MouseClicked
+Buypage b=new Buypage(hero+"c1",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel45MouseClicked
+
+    private void jLabel50MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel50MouseClicked
+Buypage b=new Buypage(hero+"c1",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel50MouseClicked
+
+    private void jLabel44MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel44MouseClicked
+Buypage b=new Buypage(hero+"c2",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel44MouseClicked
+
+    private void jLabel51MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel51MouseClicked
+Buypage b=new Buypage(hero+"c2",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel51MouseClicked
+
+    private void jLabel43MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel43MouseClicked
+Buypage b=new Buypage(hero+"c3",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel43MouseClicked
+
+    private void jLabel52MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel52MouseClicked
+Buypage b=new Buypage(hero+"c3",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel52MouseClicked
+
+    private void jLabel36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel36MouseClicked
+Buypage b=new Buypage(hero+"c4",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel36MouseClicked
+
+    private void jLabel37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel37MouseClicked
+Buypage b=new Buypage(hero+"c4",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel37MouseClicked
+
+    private void jLabel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel34MouseClicked
+Buypage b=new Buypage(hero+"c5",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel34MouseClicked
+
+    private void jLabel35MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel35MouseClicked
+Buypage b=new Buypage(hero+"c5",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel35MouseClicked
+
+    private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
+Buypage b=new Buypage(hero+"m1",email1); 
+b.setVisible(true);          // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel31MouseClicked
+
+    private void jLabel47MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel47MouseClicked
+Buypage b=new Buypage(hero+"m1",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel47MouseClicked
+
+    private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
+Buypage b=new Buypage(hero+"m2",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel30MouseClicked
+
+    private void jLabel33MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel33MouseClicked
+Buypage b=new Buypage(hero+"m2",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel33MouseClicked
+
+    private void jLabel32MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel32MouseClicked
+Buypage b=new Buypage(hero+"m3",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel32MouseClicked
+
+    private void jLabel46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel46MouseClicked
+Buypage b=new Buypage(hero+"m3",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel46MouseClicked
+
+    private void jLabel40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel40MouseClicked
+Buypage b=new Buypage(hero+"m4",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel40MouseClicked
+
+    private void jLabel41MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel41MouseClicked
+Buypage b=new Buypage(hero+"m4",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel41MouseClicked
+
+    private void jLabel38MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel38MouseClicked
+Buypage b=new Buypage(hero+"m5",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel38MouseClicked
+
+    private void jLabel39MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel39MouseClicked
+Buypage b=new Buypage(hero+"m5",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel39MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+Buypage b=new Buypage("crossc1",email1); 
+b.setVisible(true);        // TODO add your handling code here: 
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+Buypage b=new Buypage("crossc1",email1); 
+b.setVisible(true);        // TODO add your handling code here: 
+    }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+Buypage b=new Buypage("crossc2",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+Buypage b=new Buypage("crossc2",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+Buypage b=new Buypage("crossc3",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+Buypage b=new Buypage("crossc3",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+Buypage b=new Buypage("crossc4",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
+Buypage b=new Buypage("crossc4",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel22MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+Buypage b=new Buypage("crossc5",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
+Buypage b=new Buypage("crossc5",email1); 
+b.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel24MouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Homepage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Homepage("gandhidarshm@gmail.com").setVisible(true);
+            }
+        });
+    }
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel exit3;
+    private javax.swing.JLabel id;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JLabel mini3;
+    private javax.swing.JLabel rec;
+    private javax.swing.JLabel rec1;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JScrollPane scrollPane1;
+    // End of variables declaration//GEN-END:variables
+}
